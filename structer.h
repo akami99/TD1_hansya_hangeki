@@ -1,7 +1,5 @@
 #pragma once
 
-//\‘¢‘Ì‚ÌéŒ¾
-
 struct Vector2
 {
 	float x;
@@ -11,7 +9,7 @@ struct Vector2
 struct Player
 {
 	Vector2 pos;
-	int speed;
+	Vector2 velocity;
 	int radius;
 };
 
