@@ -1,16 +1,38 @@
 #include <Novice.h>
 
-const char kWindowTitle[] = "タイトル";
+const char kWindowTitle[] = "反射反撃";
+
+const int kScreenWidth = 1280;
+const int kScreenHeight = 720;
 
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	// ライブラリの初期化
-	Novice::Initialize(kWindowTitle, 1280, 720);
+	Novice::Initialize(kWindowTitle, kScreenWidth, kScreenHeight);
 
 	// キー入力結果を受け取る箱
 	char keys[256] = {0};
 	char preKeys[256] = {0};
+
+	struct Vector2
+	{
+		float x;
+		float y;
+	};
+
+	struct Player
+	{
+		Vector2 pos;
+		int speed;
+		int radius;
+	};
+
+	struct Map
+	{
+		int width;
+		int height;
+	};
 
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
